@@ -22,6 +22,7 @@ body {
     background: var(--background);
     color: var(--text);
     min-height: 100vh;
+    animation: page-enter 700ms ease-out both;
 }
 
 .navbar {
@@ -32,6 +33,11 @@ body {
     padding: 0 7%;
     background: var(--white);
     border-bottom: 1px solid var(--border);
+    transition: box-shadow 250ms ease;
+}
+
+.navbar:hover {
+    box-shadow: 0 8px 24px rgba(50, 80, 60, 0.06);
 }
 
 .brand {
@@ -45,6 +51,11 @@ body {
     height: 48px;
     object-fit: contain;
     border-radius: 50%;
+    transition: transform 300ms ease;
+}
+
+.brand:hover .csk-logo {
+    transform: rotate(-8deg) scale(1.08);
 }
 
 .brand h2 {
@@ -74,6 +85,7 @@ body {
     height: 7px;
     border-radius: 50%;
     background: var(--green-dark);
+    animation: status-pulse 2s ease-in-out infinite;
 }
 
 .container {
@@ -84,6 +96,7 @@ body {
 .hero {
     text-align: center;
     padding: 70px 20px 45px;
+    animation: rise-in 700ms 100ms ease-out both;
 }
 
 .eyebrow,
@@ -101,10 +114,18 @@ body {
 
     font-size: clamp(42px, 6vw, 68px);
     letter-spacing: -3px;
+    animation: title-reveal 800ms 220ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 .hero h1 span {
     color: var(--green-dark);
+    display: inline-block;
+    transition: transform 250ms ease, color 250ms ease;
+}
+
+.hero h1:hover span {
+    color: var(--green);
+    transform: translateY(-3px);
 }
 
 .hero-text {
@@ -114,6 +135,7 @@ body {
     color: var(--muted);
     line-height: 1.7;
     font-size: 16px;
+    animation: rise-in 700ms 380ms ease-out both;
 }
 
 .demo {
@@ -131,6 +153,15 @@ body {
     border-radius: 20px;
     padding: 22px;
     box-shadow: 0 8px 30px rgba(50, 80, 60, 0.04);
+    transition: transform 250ms ease, box-shadow 250ms ease, border-color 250ms ease;
+    animation: rise-in 700ms 220ms ease-out both;
+}
+
+.camera-card:hover,
+.prediction-card:hover {
+    transform: translateY(-5px);
+    border-color: #c6dfcb;
+    box-shadow: 0 16px 36px rgba(50, 80, 60, 0.1);
 }
 
 .card-header {
@@ -152,6 +183,13 @@ body {
     color: var(--green-dark);
     font-size: 10px;
     font-weight: 800;
+    transition: transform 200ms ease, background 200ms ease;
+    animation: badge-glow 2.4s ease-in-out infinite;
+}
+
+.live-badge:hover {
+    transform: scale(1.06);
+    background: #dff2e3;
 }
 
 /* camera */
@@ -163,6 +201,28 @@ body {
     justify-content: center;
     border-radius: 14px;
     background: #edf3ef;
+    transition: background 250ms ease, transform 250ms ease;
+    overflow: hidden;
+    position: relative;
+}
+
+.camera-screen::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    width: 35%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transform: translateX(-150%) skewX(-15deg);
+    transition: transform 700ms ease;
+    pointer-events: none;
+}
+
+.camera-card:hover .camera-screen::after {
+    transform: translateX(430%) skewX(-15deg);
+}
+
+.camera-card:hover .camera-screen {
+    background: #e7f1e9;
 }
 
 .camera-placeholder {
@@ -174,6 +234,11 @@ body {
     font-size: 45px;
     color: var(--green-dark);
     margin-bottom: 10px;
+    transition: transform 300ms ease;
+}
+
+.camera-card:hover .camera-icon {
+    transform: translateY(-4px) rotate(8deg);
 }
 
 .camera-placeholder h3 {
@@ -202,12 +267,17 @@ body {
     font-weight: 700;
 
     cursor: pointer;
-    transition: 0.2s;
+    transition: transform 200ms ease, opacity 200ms ease, box-shadow 200ms ease;
 }
 
 .camera-button:hover {
-    transform: translateY(-1px);
+    transform: translateY(-2px);
     opacity: 0.9;
+    box-shadow: 0 8px 18px rgba(63, 127, 80, 0.25);
+}
+
+.camera-button:active {
+    transform: translateY(0) scale(0.98);
 }
 
 .prediction-card {
@@ -241,6 +311,13 @@ body {
     font-size: 52px;
 
     margin-bottom: 20px;
+    transition: transform 300ms ease, box-shadow 300ms ease;
+    animation: icon-float 3s ease-in-out infinite;
+}
+
+.prediction-card:hover .prediction-icon {
+    transform: scale(1.08) rotate(4deg);
+    box-shadow: 0 10px 25px rgba(139, 207, 155, 0.3);
 }
 
 .prediction-caption {
@@ -256,6 +333,12 @@ body {
 
     font-size: 38px;
     text-transform: uppercase;
+    transition: color 250ms ease, transform 250ms ease;
+}
+
+.prediction-content h2:hover {
+    color: var(--green-dark);
+    transform: scale(1.04);
 }
 
 .confidence {
@@ -275,6 +358,12 @@ body {
 
 .confidence-header strong {
     color: var(--text);
+    transition: color 250ms ease, transform 250ms ease;
+}
+
+.confidence:hover .confidence-header strong {
+    color: var(--green-dark);
+    transform: translateX(-3px);
 }
 
 .progress {
@@ -293,6 +382,13 @@ body {
     background: var(--green);
 
     border-radius: inherit;
+    transform-origin: left;
+    animation: progress-enter 900ms 700ms ease-out both;
+    transition: width 450ms ease, background 250ms ease;
+}
+
+.confidence:hover .progress-value {
+    background: var(--green-dark);
 }
 
 .prediction-note {
@@ -338,6 +434,30 @@ body {
     background: var(--white);
     border: 1px solid var(--border);
     border-radius: 14px;
+    transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+    animation: rise-in 700ms 400ms ease-out both;
+}
+
+.gesture:hover {
+    transform: translateY(-4px);
+    border-color: #c6dfcb;
+    box-shadow: 0 12px 24px rgba(50, 80, 60, 0.08);
+}
+
+.gesture > span {
+    transition: transform 220ms ease;
+}
+
+.gesture:hover > span {
+    transform: scale(1.15) rotate(-6deg);
+}
+
+.gesture:nth-child(2) {
+    animation-delay: 520ms;
+}
+
+.gesture:nth-child(3) {
+    animation-delay: 640ms;
 }
 
 .gesture > span {
@@ -352,6 +472,11 @@ body {
     margin-top: 4px;
     color: var(--muted);
     font-size: 11px;
+}
+
+.camera-button:focus-visible {
+    outline: 3px solid rgba(139, 207, 155, 0.55);
+    outline-offset: 3px;
 }
 
 footer {
@@ -373,6 +498,52 @@ footer strong {
 footer span {
     display: block;
     margin-top: 5px;
+}
+
+@keyframes page-enter {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes rise-in {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes status-pulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(63, 127, 80, 0.35); }
+    50% { box-shadow: 0 0 0 5px rgba(63, 127, 80, 0); }
+}
+
+@keyframes icon-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+@keyframes progress-enter {
+    from { transform: scaleX(0); }
+    to { transform: scaleX(1); }
+}
+
+@keyframes title-reveal {
+    from { opacity: 0; transform: translateY(22px) scale(0.98); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes badge-glow {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(139, 207, 155, 0); }
+    50% { box-shadow: 0 0 0 4px rgba(139, 207, 155, 0.16); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 1ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 1ms !important;
+    }
 }
 
 @media (max-width: 800px) {
