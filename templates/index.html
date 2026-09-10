@@ -6,6 +6,7 @@
 
     <title>CSK Vision | AI/ML Track</title>
 
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='csk-logo.png') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 
@@ -33,7 +34,7 @@
             <p class="eyebrow">COMPUTER VISION EXPERIMENT</p>
 
             <h1>
-                Meet <span>CSK Vision.</span>
+                Meet <span style="animation: brand-bounce 1.9s ease-in-out infinite;">CSK Vision.</span>
             </h1>
 
             <p class="hero-text">
@@ -46,40 +47,6 @@
         <!-- demo area -->
         <section class="demo">
 
-            <div class="camera-card">
-
-                <div class="card-header">
-                    <div>
-                        <p class="card-label">LIVE CAMERA</p>
-                        <h3>Show your gesture</h3>
-                    </div>
-
-                    <span class="live-badge">● LIVE</span>
-                </div>
-
-                <div class="camera-screen">
-
-                    <div class="camera-placeholder">
-                        <div class="camera-icon">⌁</div>
-
-                        <h3>Camera is ready</h3>
-
-                        <p>
-                            Start the camera and show one of
-                            the gestures below.
-                        </p>
-                    </div>
-
-                </div>
-
-                <button class="camera-button">
-                    Start Camera
-                </button>
-
-            </div>
-
-
-            <!-- ..... prediction -->
             <div class="prediction-card">
 
                 <p class="card-label">MODEL OUTPUT</p>
