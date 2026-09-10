@@ -8,6 +8,7 @@
     --green: #8bcf9b;
     --green-dark: #3f7f50;
     --green-light: #eef8f0;
+    --icon-orange: #f28c28;
 
     --text: #1f2922;
     --muted: #718078;
@@ -23,6 +24,10 @@ body {
     color: var(--text);
     min-height: 100vh;
     animation: page-enter 700ms ease-out both;
+}
+
+ion-icon {
+    color: var(--icon-orange);
 }
 
 .navbar {
@@ -322,6 +327,10 @@ body {
     animation: icon-float 3s ease-in-out infinite;
 }
 
+.prediction-icon ion-icon {
+    font-size: 52px;
+}
+
 .prediction-card:hover .prediction-icon {
     transform: scale(1.08) rotate(4deg);
     box-shadow: 0 10px 25px rgba(139, 207, 155, 0.3);
@@ -383,7 +392,7 @@ body {
 }
 
 .progress-value {
-    width: 87%;
+    width: 0%;
     height: 100%;
 
     background: var(--green);
@@ -455,6 +464,9 @@ body {
 
 .gesture > span {
     transition: transform 220ms ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .gesture:hover > span {
@@ -482,6 +494,10 @@ body {
 }
 
 .gesture > span {
+    font-size: 32px;
+}
+
+.gesture > span ion-icon {
     font-size: 32px;
 }
 
