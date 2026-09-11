@@ -116,6 +116,29 @@ ion-icon {
     letter-spacing: 1.5px;
 }
 
+.greeting {
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 18px;
+    padding: 10px 17px;
+    color: #9a5312;
+    background: linear-gradient(135deg, #fff5e8, #fffaf2);
+    border: 1px solid #f3d8b5;
+    border-radius: 999px;
+    box-shadow: 0 8px 20px rgba(242, 140, 40, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    font-size: clamp(19px, 2.5vw, 25px);
+    font-weight: 800;
+    letter-spacing: 0;
+    animation: greeting-pop 700ms var(--ease-spring) both;
+    transition: transform 240ms var(--ease-spring), box-shadow 240ms ease, background 240ms ease;
+}
+
+.greeting:hover {
+    transform: translateY(-3px) rotate(-1deg);
+    background: linear-gradient(135deg, #fff0d9, #fff8ec);
+    box-shadow: 0 13px 26px rgba(242, 140, 40, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.95);
+}
+
 .hero h1 {
     margin-top: 12px;
 
@@ -751,6 +774,100 @@ footer span {
     line-height: 1.8;
 }
 
+.build-story {
+    display: grid;
+    grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.3fr);
+    gap: clamp(28px, 6vw, 72px);
+    align-items: center;
+    min-width: 0;
+    padding: 38px 0 72px;
+}
+
+.build-story-copy h2 {
+    margin-top: 9px;
+    font-size: clamp(28px, 4vw, 42px);
+    line-height: 1.08;
+}
+
+.build-story-copy > p:last-child {
+    max-width: 310px;
+    margin-top: 16px;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.75;
+}
+
+.video-frame {
+    min-width: 0;
+    max-width: 100%;
+    overflow: hidden;
+    background: #101513;
+    border: 1px solid #263a2b;
+    border-radius: 18px;
+    box-shadow: 0 20px 42px rgba(26, 45, 31, 0.18);
+    transition: transform 350ms var(--ease-spring), box-shadow 350ms ease, border-color 350ms ease;
+}
+
+.video-frame:hover {
+    transform: translateY(-7px);
+    border-color: var(--green-dark);
+    box-shadow: 0 28px 52px rgba(26, 45, 31, 0.26);
+}
+
+.video-bar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-height: 38px;
+    min-width: 0;
+    padding: 0 14px;
+    color: #a8c1ad;
+    background: #18231b;
+    font-size: 10px;
+    letter-spacing: 0.7px;
+}
+
+.video-bar > span:first-child {
+    display: flex;
+    gap: 5px;
+}
+
+.video-bar i {
+    display: block;
+    width: 8px;
+    height: 8px;
+    background: #d48654;
+    border-radius: 50%;
+}
+
+.video-bar i:nth-child(2) { background: #d4b255; }
+.video-bar i:nth-child(3) { background: #75b780; }
+
+.video-bar strong {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: 600;
+}
+
+.video-status {
+    margin-left: auto;
+    color: #75b780;
+    white-space: nowrap;
+    font-size: 9px;
+}
+
+.pipeline-video {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #101513;
+    object-fit: cover;
+}
+
 .how-it-works {
     padding: 14px 0 72px;
 }
@@ -829,6 +946,11 @@ footer span {
 
 @keyframes title-reveal {
     from { opacity: 0; transform: translateY(22px) scale(0.98); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes greeting-pop {
+    from { opacity: 0; transform: translateY(8px) scale(0.96); }
     to { opacity: 1; transform: translateY(0) scale(1); }
 }
 
@@ -952,7 +1074,8 @@ footer span {
     }
 
     .landing-hero,
-    .about-strip {
+    .about-strip,
+    .build-story {
         grid-template-columns: 1fr;
     }
 
@@ -1036,6 +1159,36 @@ footer span {
     .about-strip {
         gap: 20px;
         padding-bottom: 48px;
+    }
+
+    .build-story {
+        gap: 24px;
+        padding-top: 18px;
+        padding-bottom: 50px;
+    }
+
+    .video-frame {
+        width: 100%;
+        border-radius: 14px;
+    }
+
+    .video-bar {
+        gap: 8px;
+        min-height: 34px;
+        padding: 0 10px;
+        font-size: 9px;
+    }
+
+    .video-bar > span:first-child {
+        flex: 0 0 auto;
+    }
+
+    .video-bar strong {
+        flex: 1 1 auto;
+    }
+
+    .video-status {
+        display: none;
     }
 
 }
