@@ -28,12 +28,15 @@
 	</header>
 
 	<main class="container">
-		<section class="landing-hero">
+		<section class="landing-hero hero-background-section">
+			<video class="hero-background-video" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+				<source src="{{ url_for('static', filename='demo.webm') }}" type="video/webm">
+			</video>
+			<div class="hero-background-overlay"></div>
 			<div class="landing-copy">
-				<p class="greeting">Namastee! 😂😂</p>
-				<p class="eyebrow">COMPUTER VISION EXPERIMENT</p>
+				<p class="eyebrow">COMPUTER VISION</p>
 
-				<h1>See the gesture.<br><span>Understand the signal.</span></h1>
+				<h1>Teach your computer,<br><span>How to see the world around it</span></h1>
 
 				<p class="hero-text">
 					CSK Vision is a real-time computer vision project from the CSK AI/ML
