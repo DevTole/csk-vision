@@ -9,9 +9,13 @@ app.template_folder = template_dir
 sign = "Initialising..."
 confidence = "0%"
 
-@app.route("/")
+@app.route("/predict")
 def home():
     return render_template("index.html", sign=sign, confidence=confidence)
+
+@app.route("/")
+def landing():
+    return render_template("landing.html")
 
 @app.route("/get_sign")
 def get_sign():
