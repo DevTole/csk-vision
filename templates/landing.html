@@ -30,6 +30,7 @@
 	<main class="container">
 		<section class="landing-hero">
 			<div class="landing-copy">
+				<p class="greeting">Namastee! 😂😂</p>
 				<p class="eyebrow">COMPUTER VISION EXPERIMENT</p>
 
 				<h1>See the gesture.<br><span>Understand the signal.</span></h1>
@@ -74,6 +75,38 @@
 				AI: the camera captures an image, the model recognizes a visual pattern,
 				and the interface translates its prediction into a clear result.
 			</p>
+		</section>
+
+		<section class="build-story">
+			<div class="build-story-copy">
+				<p class="card-label">BEHIND THE BUILD</p>
+				<h2>From code to camera.</h2>
+				<p>
+					Take a quick look at the work behind CSK Vision. The model, interface,
+					and live prediction pipeline come together in one small experiment.
+				</p>
+			</div>
+
+			<div class="video-frame">
+				<div class="video-bar">
+					<span><i></i><i></i><i></i></span>
+					<strong>coding_the_pipeline.webm</strong>
+					<span class="video-status">PLAYING PREVIEW</span>
+				</div>
+				<video
+					class="pipeline-video"
+					autoplay
+					controls
+					muted
+					loop
+					playsinline
+					preload="metadata"
+					poster="{{ url_for('static', filename='csk-logo.png') }}"
+				>
+					<source src="{{ url_for('static', filename='coding_the_pipeline.webm') }}" type="video/webm">
+					Your browser does not support embedded video. The CSK Vision pipeline is being built with Python, TensorFlow, and Flask.
+				</video>
+			</div>
 		</section>
 
 		<section class="how-it-works" id="how-it-works">
