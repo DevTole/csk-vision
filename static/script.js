@@ -101,4 +101,3 @@ async function fetchSign() {
 
 fetchSign();
 setInterval(fetchSign, 500);
-
