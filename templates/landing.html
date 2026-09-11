@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>CSK Vision | AI/ML Track</title>
+
+	<link rel="icon" type="image/png" href="{{ url_for('static', filename='csk-logo.png') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+
+	<header class="navbar">
+		<div class="brand">
+			<img src="{{ url_for('static', filename='csk-logo.png') }}" alt="CSK Logo" class="csk-logo">
+
+			<div>
+				<h2>CSK Vision</h2>
+				<span>AI/ML Track</span>
+			</div>
+		</div>
+
+		<a class="status" href="/predict">
+			Live Demo
+        </a>
+	</header>
+
+	<main class="container">
+		<section class="landing-hero">
+			<div class="landing-copy">
+				<p class="eyebrow">COMPUTER VISION EXPERIMENT</p>
+
+				<h1>See the gesture.<br><span>Understand the signal.</span></h1>
+
+				<p class="hero-text">
+					CSK Vision is a real-time computer vision project from the CSK AI/ML
+					Track. It watches a camera feed, finds a hand, and classifies three
+					gestures using a trained neural network.
+				</p>
+
+				<div class="landing-actions">
+					<a class="camera-button landing-button" href="{{ url_for('home') }}">
+						<ion-icon name="videocam-outline" aria-hidden="true"></ion-icon>
+						Open live demo
+					</a>
+					<a class="text-link" href="#how-it-works">How it works <span>↓</span></a>
+				</div>
+			</div>
+
+			<div class="landing-signal" aria-label="CSK Vision overview">
+				<div class="signal-topline">
+					<span class="card-label">LIVE SIGNAL</span>
+					<span class="signal-mark"><span></span> READY</span>
+				</div>
+				<div class="signal-icon">
+					<ion-icon name="scan-outline" aria-hidden="true"></ion-icon>
+				</div>
+				<p class="signal-label">HAND GESTURE MODEL</p>
+				<h2>One camera.<br><em>Three signals.</em></h2>
+				<div class="signal-line"><span></span><span></span><span></span><span></span><span></span></div>
+				<p class="signal-note">Built to make machine learning feel visible, immediate, and easy to explore.</p>
+			</div>
+		</section>
+
+		<section class="about-strip">
+			<div>
+				<p class="card-label">WHAT IS CSK VISION?</p>
+				<h2>A small model with a human-sized purpose.</h2>
+			</div>
+			<p>
+				This project turns a familiar interaction into a gentle introduction to
+				AI: the camera captures an image, the model recognizes a visual pattern,
+				and the interface translates its prediction into a clear result.
+			</p>
+		</section>
+
+		<section class="how-it-works" id="how-it-works">
+			<div class="section-heading">
+				<p class="card-label">THE PROCESS</p>
+				<h2>From movement to meaning.</h2>
+			</div>
+
+			<div class="process-grid">
+				<div class="process-step">
+					<span class="step-number">01</span>
+					<ion-icon name="camera-outline" aria-hidden="true"></ion-icon>
+					<h3>Capture</h3>
+					<p>Your camera provides the live visual input.</p>
+				</div>
+				<div class="process-step">
+					<span class="step-number">02</span>
+					<ion-icon name="sparkles-outline" aria-hidden="true"></ion-icon>
+					<h3>Classify</h3>
+					<p>A trained MobileNetV2 model looks for the gesture.</p>
+				</div>
+				<div class="process-step">
+					<span class="step-number">03</span>
+					<ion-icon name="chatbubble-ellipses-outline" aria-hidden="true"></ion-icon>
+					<h3>Interpret</h3>
+					<p>The prediction appears with a confidence score.</p>
+				</div>
+			</div>
+		</section>
+
+		<section class="gestures">
+			<div class="section-heading">
+				<p class="card-label">TRAINED CLASSES</p>
+				<h2>What can CSK Vision recognize?</h2>
+			</div>
+
+			<div class="gesture-grid">
+				<div class="gesture">
+					<span><ion-icon name="hand-left-outline" aria-hidden="true"></ion-icon></span>
+					<div>
+						<strong>Wave</strong>
+						<p>Open palm gesture</p>
+					</div>
+				</div>
+
+				<div class="gesture">
+					<span><ion-icon name="thumbs-up-outline" aria-hidden="true"></ion-icon></span>
+					<div>
+						<strong>CSK Approved</strong>
+						<p>Thumbs-up gesture</p>
+					</div>
+				</div>
+
+				<div class="gesture">
+					<span><ion-icon name="happy-outline" aria-hidden="true"></ion-icon></span>
+					<div>
+						<strong>CSK Peace</strong>
+						<p>Peace gesture</p>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<footer>
+		<p>Built by the <strong>CSK AI/ML Track</strong></p>
+		<span>Code • Connect • Grow</span>
+	</footer>
+
+	<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+	<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+	<script src="https://unpkg.com/cursorlyjs@latest/dist/cursorly.min.js"></script>
+	<script src="{{ url_for('static', filename='cursor.js') }}"></script>
+</body>
+</html>
